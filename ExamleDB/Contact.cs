@@ -12,10 +12,10 @@ namespace ContactListDB
     // класс контакт
     class Contact
     {
-        private String name;
-        private String surname;
-        private String phone;
-        private String email;
+        private String name; // имя
+        private String surname; // фамилия
+        private String phone; // телефон
+        private String email; // почта
 
         // конструктор    
         public Contact(string name1, string surname1, string phone1, string email1)

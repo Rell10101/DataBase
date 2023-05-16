@@ -38,6 +38,8 @@
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="App">
                 <Button Content="Reference" Click="MenuItem_Reference_Click"></Button>
+                <Button Content="SaveToFile" Click="MenuItem_SaveToFile_Click"></Button>
+                <Button Content="ReadFile" Click="MenuItem_ReadFile_Click"></Button>
                 <Button Content="Exit"  Click="MenuItem_Exit_Click"></Button>
             </MenuItem>
         </Menu>

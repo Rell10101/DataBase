@@ -50,13 +50,13 @@ namespace ContactListDB
         // метод для чтения csv файла
         public void read_csv(string filename)
         {
-            string path = filename + @".csv";
+            string path = filename; //+ @".csv"
 
             if (File.Exists(path))
             { 
-                using (TextFieldParser tfp = new TextFieldParser( filename + @".csv"))
-            {
-                tfp.TextFieldType = FieldType.Delimited;
+                using (TextFieldParser tfp = new TextFieldParser( filename )) //+ @".csv"
+                {
+                    tfp.TextFieldType = FieldType.Delimited;
                 // обозначим знак разделения
                 tfp.SetDelimiters(",");
 
@@ -73,7 +73,7 @@ namespace ContactListDB
         // запись в csv файл
         public void write_csv(int count, string filename)
         {
-            string path = filename + @".csv";
+            string path = filename;
 
             //if (File.Exists(path))
             //{
@@ -94,7 +94,7 @@ namespace ContactListDB
         public void del_row(int SelInd, int count)
         {
             // в index записывается номер выделенной строки
-            if (SelInd <= count)
+            if (SelInd <= count && SelInd >=0)
             {
                 data.RemoveAt(SelInd);
             }

@@ -18,6 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 using Microsoft.VisualBasic.FileIO;
+using Microsoft.Win32;
 
 namespace ContactListDB
 {
@@ -126,6 +127,30 @@ namespace ContactListDB
         private void MenuItem_Reference_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("База данных хранит информацию о контактах \nРазработчик: Самаев Антон ИВТ-21");
+        }
+
+        private void MenuItem_SaveToFile_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Comma-separated values file|*.csv*";
+
+            if (sfd.ShowDialog() == true)
+            {
+                //string filename = sfd.FileName;
+            
+
+            data.write_csv(datagrid.Items.Count, sfd.FileName);
+            }
+        }
+
+        private void MenuItem_ReadFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            if (ofd.ShowDialog() == true)
+            {
+                data.read_csv(ofd.FileName);
+            }
         }
     }
 }
