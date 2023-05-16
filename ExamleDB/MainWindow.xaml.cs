@@ -97,16 +97,6 @@ namespace ContactListDB
             data.del_row(datagrid.SelectedIndex, datagrid.Items.Count);
         }
 
-        // todo: не работает
-        // изменение данных в строке
-        private void Button_change_Click(object sender, RoutedEventArgs e)
-        {
-            var index = datagrid.SelectedIndex;
-            data.data[index].Name = TextBox_name.Text;
-            data.data[index].Surname = TextBox_surname.Text;
-            data.data[index].Phone = TextBox_phone.Text;
-        }
-
         // закрытие прогаммы при нажатии на пункт меню
         private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
         {
