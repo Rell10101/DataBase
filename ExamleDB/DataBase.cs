@@ -42,11 +42,9 @@ namespace ContactListDB
         }
 
         // метод для добавления данных
-        public void add_data(int count, string name, string surname, string phone)
+        public void add_data( string name, string surname, string phone, string email)
         {
-
-
-            data.Add(new Contact(count + 1, name, surname, phone));
+            data.Add(new Contact(name, surname, phone, email));
         }
 
         // метод для чтения csv файла
@@ -66,7 +64,7 @@ namespace ContactListDB
                 {
                     // делим первую строчку на поля, которые разделяюся запятой
                     string[] fields = tfp.ReadFields();
-                    data.Add(new Contact(int.Parse(fields[0]), fields[1], fields[2], fields[3]));
+                    data.Add(new Contact(fields[0], fields[1], fields[2], fields[3]));
                 }
             }
             }
@@ -84,7 +82,7 @@ namespace ContactListDB
                 StringBuilder scv = new StringBuilder();
                 for (int i = 0; i < n; ++i)
                 {
-                    scv.AppendLine(data[i].id + "," + data[i].Name + "," + data[i].Surname + "," + data[i].Phone);
+                    scv.AppendLine(data[i].Name + "," + data[i].Surname + "," + data[i].Phone + "," + data[i].Email);
                     // Encoding нужен для правильной записи символов
                     File.WriteAllText(path, scv.ToString(),Encoding.GetEncoding(1251));
                 }
@@ -96,16 +94,9 @@ namespace ContactListDB
         public void del_row(int SelInd, int count)
         {
             // в index записывается номер выделенной строки
-            int index = SelInd;
-            //var index = int.Parse(TextBox_del.Text)-1;
-            //datagrid.Items.RemoveAt(index);
-            if (index <= count)
+            if (SelInd <= count)
             {
-                data.RemoveAt(index);
-                /*for (int i = 0; i <= ((MainWindow)System.Windows.Application.Current.MainWindow).datagrid.Items.Count - 1; ++i)
-                {
-                    data[i].id = i + 1;
-                }*/
+                data.RemoveAt(SelInd);
             }
         }
     }

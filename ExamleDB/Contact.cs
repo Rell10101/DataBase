@@ -9,30 +9,31 @@ using System.Threading.Tasks;
 namespace ContactListDB
 {
 
-    // Контакт
+    // класс контакт
     class Contact
     {
-        public int id;
         private String name;
         private String surname;
         private String phone;
+        private String email;
 
         // конструктор    
-        public Contact(int id1, string name1, string surname1, string phone1)
+        public Contact(string name1, string surname1, string phone1, string email1)
         {
-            id = id1;
             name = name1;
             surname = surname1;
             phone = phone1;
+            email = email1;
         }
 
-        public int Id { get => id; set => id = value; }
 
         public string Name { get => name; set => name = value; }
         
         public string Surname { get => surname; set => surname = value; }
 
         public string Phone { get => phone; set => phone = value; }
+
+        public string Email { get => email; set => email = value; }
 
 
     }

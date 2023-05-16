@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactListDB"
         mc:Ignorable="d"
-       Title="Контакты" Height="567" Width="797">
+       Title="Контакты" Height="771" Width="833">
     <Grid>
-        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="196" Margin="10,36,0,0" VerticalAlignment="Top" Width="413" SelectionChanged="datagrid_SelectionChanged"/>
-        <Button x:Name="button_add_row" Content="_Добавить строку" HorizontalAlignment="Left" Margin="447,240,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="button_add_row_Click"/>
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="236" Margin="10,36,0,0" VerticalAlignment="Top" Width="413" SelectionChanged="datagrid_SelectionChanged"/>
+        <Button x:Name="button_add_row" Content="_Добавить строку" HorizontalAlignment="Left" Margin="611,53,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="button_add_row_Click"/>
         <TextBox x:Name="TextBox_name" HorizontalAlignment="Left" Margin="447,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBox_surname" HorizontalAlignment="Left" Margin="447,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBox_phone" HorizontalAlignment="Left" Margin="447,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Button_read_csv" Content="_Прочитать csv" HorizontalAlignment="Left" Margin="447,331,0,0" VerticalAlignment="Top" Height="41" Width="120" Click="Button_read_csv_Click"/>
-        <Button x:Name="Button_write_csv" Content="_Записать в csv" HorizontalAlignment="Left" Margin="447,384,0,0" VerticalAlignment="Top" Height="41" Width="120" Click="Button_write_csv_Click"/>
+        <TextBox x:Name="TextBox_surname" HorizontalAlignment="Left" Margin="447,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBox_phone" HorizontalAlignment="Left" Margin="447,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Button_read_csv" Content="_Прочитать csv" HorizontalAlignment="Left" Margin="611,129,0,0" VerticalAlignment="Top" Height="25" Width="120" Click="Button_read_csv_Click"/>
+        <Button x:Name="Button_write_csv" Content="_Записать в csv" HorizontalAlignment="Left" Margin="611,165,0,0" VerticalAlignment="Top" Height="21" Width="120" Click="Button_write_csv_Click"/>
         <Label Content="Имя" HorizontalAlignment="Left" Margin="447,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.037"/>
-        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="447,95,0,0" VerticalAlignment="Top"/>
-        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="447,155,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_error" Content="" HorizontalAlignment="Left" Margin="447,202,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="447,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="447,166,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_phone_error" Content="" HorizontalAlignment="Left" Margin="447,203,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.5,0.5" Height="26" FontSize="10">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,13 +27,18 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="Button_del_row" Content="_Удалить строчку" HorizontalAlignment="Left" Margin="447,276,0,0" VerticalAlignment="Top" Height="27" Width="120" Click="Button_del_row_Click"/>
+        <Button x:Name="Button_del_row" Content="_Удалить строчку" HorizontalAlignment="Left" Margin="611,89,0,0" VerticalAlignment="Top" Height="27" Width="120" Click="Button_del_row_Click"/>
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="App">
                 <Button Content="Reference" Click="MenuItem_Reference_Click"></Button>
                 <Button Content="Exit"  Click="MenuItem_Exit_Click"></Button>
             </MenuItem>
         </Menu>
+        <Label x:Name="label_name_error" Content="" HorizontalAlignment="Left" Margin="447,78,0,0" VerticalAlignment="Top" Height="26" Width="120" FontSize="10"/>
+        <Label x:Name="label_surname_error" HorizontalAlignment="Left" Margin="447,142,0,0" VerticalAlignment="Top" FontSize="10" Height="24" Width="120"/>
+        <Label x:Name="Label_email" Content="Email" HorizontalAlignment="Left" Margin="452,228,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_email" HorizontalAlignment="Left" Margin="447,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.235,0.615"/>
+        <Label x:Name="label_email_error" HorizontalAlignment="Left" Margin="447,266,0,0" VerticalAlignment="Top" Width="120" FontSize="10" Height="21"/>
 
 
 

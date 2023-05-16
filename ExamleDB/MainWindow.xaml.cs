@@ -42,32 +42,51 @@ namespace ContactListDB
         /// Добавляет новую строку в таблицу
         private void button_add_row_Click(object sender, RoutedEventArgs e)
         {
-            if (TextBox_name.Text == "" || TextBox_surname.Text == "" || TextBox_phone.Text == "")
+            if (TextBox_name.Text == "")
             {
-                label_error.Content = "Fill all fields";
+                label_name_error.Content = "Fill field";
+                
+                return;
+            }
+
+            if (TextBox_surname.Text == "")
+            {
+                label_surname_error.Content = "Fill field";
+                return;
+            }
+
+            if (TextBox_phone.Text == "")
+            {
+                label_phone_error.Content = "Fill field";
+                return;
+            }
+
+            if (TextBox_email.Text == "")
+            {
+                label_email_error.Content = "Fill field";
                 return;
             }
 
             if (Regex.IsMatch(TextBox_name.Text, @"[0-9]"))
             {
-                label_error.Content = "Numbers in name";
+                label_name_error.Content = "Numbers in name";
                 return;
             }
 
             if (Regex.IsMatch(TextBox_surname.Text, @"[0-9]"))
             {
-                label_error.Content = "Numbers in surname";
+                label_surname_error.Content = "Numbers in surname";
                 return;
             }
 
             if (Regex.IsMatch(TextBox_phone.Text, @"[a-zA-Z]") || Regex.IsMatch(TextBox_phone.Text, @"[а-яА-Я]"))
             {
-                label_error.Content = "Letters in phone number";
+                label_phone_error.Content = "Letters in phone number";
                 return;
             }
 
-            data.add_data(datagrid.Items.Count, TextBox_name.Text, TextBox_surname.Text, TextBox_phone.Text);
-            label_error.Content = "";
+            data.add_data(TextBox_name.Text, TextBox_surname.Text, TextBox_phone.Text, TextBox_email.Text);
+            label_phone_error.Content = "";
         }
 
         // чтение csv файла
