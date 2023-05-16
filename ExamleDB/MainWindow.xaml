@@ -5,7 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactListDB"
         mc:Ignorable="d"
-       Title="Контакты" Height="771" Width="833">
+       Title="Контакты" Height="396" Width="833">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD6DAED" Offset="0"/>
+            <GradientStop Color="#FF374698" Offset="1"/>
+            <GradientStop Color="#FF6E78B1" Offset="0.48"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="236" Margin="10,36,0,0" VerticalAlignment="Top" Width="413" SelectionChanged="datagrid_SelectionChanged"/>
         <Button x:Name="button_add_row" Content="_Добавить строку" HorizontalAlignment="Left" Margin="611,53,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="button_add_row_Click"/>
