@@ -90,17 +90,19 @@ namespace ContactListDB
             label_phone_error.Content = "";
         }
 
+        /*
         // чтение csv файла
         private void Button_read_csv_Click(object sender, RoutedEventArgs e)
         {
             data.read_csv("DB");
         }
 
+        
         // загрузка в csv файл
         private void Button_write_csv_Click(object sender, RoutedEventArgs e)
         {
             data.write_csv(datagrid.Items.Count, "DB");
-        }
+        }*/
 
         // изменение полей ввода при выделении строчек
         private void datagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
