@@ -19,8 +19,7 @@ using System.IO;
 
 namespace ContactListDB
 {
-    // todo: не проводить тут проверку данных!!!
-    // класс для хранения и обработки данных
+    // modeler
     class DataBase
     {
         public ObservableCollection<Contact> data;
@@ -28,17 +27,6 @@ namespace ContactListDB
         public DataBase()
         {
             data = new ObservableCollection<Contact>();
-        }
-
-
-        // Добавление случайной записи в таблицу
-        public void add_random_data()
-        {
-            Random rnd = new Random();
-            List<String> names = new List<string> { "Антон", "Андрей", "Денис", "Дима" };
-            List<String> surnames = new List<string> { "Самаев", "Петров", "Шишкин", "Булков" };
-
-            //data.Add(new Customer(++Customer.id, names[rnd.Next(names.Count)], surnames[rnd.Next(names.Count)], rnd.Next()));
         }
 
         // метод для добавления данных
@@ -50,11 +38,9 @@ namespace ContactListDB
         // метод для чтения csv файла
         public void read_csv(string filename)
         {
-            string path = filename; //+ @".csv"
+            string path = filename; 
 
-            if (File.Exists(path))
-            { 
-                using (TextFieldParser tfp = new TextFieldParser( filename )) //+ @".csv"
+                using (TextFieldParser tfp = new TextFieldParser( filename )) 
                 {
                     tfp.TextFieldType = FieldType.Delimited;
                 // обозначим знак разделения
@@ -67,7 +53,6 @@ namespace ContactListDB
                     data.Add(new Contact(fields[0], fields[1], fields[2], fields[3]));
                 }
             }
-            }
         }
 
         // запись в csv файл
@@ -75,8 +60,6 @@ namespace ContactListDB
         {
             string path = filename;
 
-            //if (File.Exists(path))
-            //{
                 int n = count;
 
                 StringBuilder scv = new StringBuilder();
@@ -86,18 +69,13 @@ namespace ContactListDB
                     // Encoding нужен для правильной записи символов
                     File.WriteAllText(path, scv.ToString(),Encoding.GetEncoding(1251));
                 }
-                
-            //}
         }
 
         // метод для удаления выделенной строки
         public void del_row(int SelInd, int count)
         {
             // в index записывается номер выделенной строки
-            if (SelInd <= count && SelInd >=0)
-            {
-                data.RemoveAt(SelInd);
-            }
+            data.RemoveAt(SelInd);
         }
     }
 }

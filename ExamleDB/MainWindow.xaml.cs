@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -20,6 +21,7 @@ using System.Xml.Linq;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Win32;
 
+// controller
 namespace ContactListDB
 {
     public partial class MainWindow : Window
@@ -90,33 +92,20 @@ namespace ContactListDB
             label_phone_error.Content = "";
         }
 
-        /*
-        // чтение csv файла
-        private void Button_read_csv_Click(object sender, RoutedEventArgs e)
-        {
-            data.read_csv("DB");
-        }
-
-        
-        // загрузка в csv файл
-        private void Button_write_csv_Click(object sender, RoutedEventArgs e)
-        {
-            data.write_csv(datagrid.Items.Count, "DB");
-        }*/
-
         // изменение полей ввода при выделении строчек
         private void datagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // var index = datagrid.SelectedIndex;
-            // TextBox_name.Text = data.data[index].Name;
-            // TextBox_surname.Text = data.data[index].Surname;
-            // TextBox_phone.Text = data.data[index].Phone;
+
         }
 
         // удаление выделенной строки
         private void Button_del_row_Click(object sender, RoutedEventArgs e)
         {
-            data.del_row(datagrid.SelectedIndex, datagrid.Items.Count);
+            // в index записывается номер выделенной строки
+            if (datagrid.SelectedIndex <= datagrid.Items.Count && datagrid.SelectedIndex >= 0)
+            {
+                data.del_row(datagrid.SelectedIndex, datagrid.Items.Count);
+            }
         }
 
         // закрытие прогаммы при нажатии на пункт меню
@@ -138,10 +127,7 @@ namespace ContactListDB
 
             if (sfd.ShowDialog() == true)
             {
-                //string filename = sfd.FileName;
-            
-
-            data.write_csv(datagrid.Items.Count, sfd.FileName);
+                data.write_csv(datagrid.Items.Count, sfd.FileName);
             }
         }
 
@@ -151,7 +137,10 @@ namespace ContactListDB
 
             if (ofd.ShowDialog() == true)
             {
-                data.read_csv(ofd.FileName);
+                if (File.Exists(ofd.FileName)) 
+                { 
+                    data.read_csv(ofd.FileName);
+                }
             }
         }
     }
