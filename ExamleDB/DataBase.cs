@@ -3,6 +3,9 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;// для ObservableCollection
+// ObservableCollection -- коллекция, которую можно использовать совместно с DataGrid
+// Эта коллекция можеть оповещать о своём изменении DataGrid
+// DataGrid, в свою очередь, автоматически поддерживает сортировки и т.п.
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +20,6 @@ using System.IO;
 namespace ContactListDB
 {
     // modeler
-    // класс для хранения данных и работы с ними
     class DataBase
     {
         public ObservableCollection<Contact> data;
@@ -59,7 +61,7 @@ namespace ContactListDB
         // запись в csv файл
         public void write_csv(int count, string filename)
         {
-                string path = filename;
+            string path = filename;
 
                 int n = count;
 
