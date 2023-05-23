@@ -23,6 +23,9 @@ namespace ContactListDB
     class DataBase
     {
         public ObservableCollection<Contact> data;
+        // ObservableCollection -- коллекция, которую можно использовать совместно с DataGrid
+        // Эта коллекция можеть оповещать о своём изменении DataGrid
+        // DataGrid, в свою очередь, автоматически поддерживает сортировки и т.п.
 
         public DataBase()
         {

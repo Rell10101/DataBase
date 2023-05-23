@@ -35,10 +35,10 @@
         <Button x:Name="Button_del_row" Content="_Удалить строчку" HorizontalAlignment="Left" Margin="448,329,0,0" VerticalAlignment="Top" Height="27" Width="120" Click="Button_del_row_Click"/>
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="App">
-                <Button Content="Reference" Click="MenuItem_Reference_Click"></Button>
-                <Button Content="SaveToFile" Click="MenuItem_SaveToFile_Click"></Button>
-                <Button Content="ReadFile" Click="MenuItem_ReadFile_Click"></Button>
-                <Button Content="Exit"  Click="MenuItem_Exit_Click"></Button>
+                <MenuItem Header="Reference" Click="MenuItem_Reference_Click"></MenuItem>
+                <MenuItem Header="SaveToFile" Click="MenuItem_SaveToFile_Click"></MenuItem>
+                <MenuItem Header="ReadFile" Click="MenuItem_ReadFile_Click"></MenuItem>
+                <MenuItem Header="Exit"  Click="MenuItem_Exit_Click"></MenuItem>
             </MenuItem>
         </Menu>
         <Label x:Name="label_name_error" Content="" HorizontalAlignment="Left" Margin="448,107,0,0" VerticalAlignment="Top" Height="26" Width="120" FontSize="10"/>
@@ -46,8 +46,5 @@
         <Label x:Name="Label_email" Content="Email" HorizontalAlignment="Left" Margin="453,257,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_email" HorizontalAlignment="Left" Margin="448,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.235,0.615"/>
         <Label x:Name="label_email_error" HorizontalAlignment="Left" Margin="448,295,0,0" VerticalAlignment="Top" Width="120" FontSize="10" Height="21"/>
-
-
-
     </Grid>
 </Window>
