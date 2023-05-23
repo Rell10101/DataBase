@@ -40,7 +40,7 @@ namespace ContactListDB
         }
 
 
-        /// Добавляет новую строку в таблицу
+        // Добавляет новую строку в таблицу
         private void button_add_row_Click(object sender, RoutedEventArgs e)
         {
             // если поле ввода имени пустое
