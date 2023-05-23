@@ -1,10 +1,12 @@
+// автор: Самаев Антон ИВТ-21
+
 using ContactListDB;
 using System.Xml.Linq;
 
 namespace DBTest
 {
     [TestClass]
-    public class UnitTest1
+    public class ContactTest
     {
         [TestMethod]
         public void TestMethod_Constructor()
