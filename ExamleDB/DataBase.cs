@@ -68,7 +68,7 @@ namespace ContactListDB
                 {
                     scv.AppendLine(data[i].Name + "," + data[i].Surname + "," + data[i].Phone + "," + data[i].Email);
                     // Encoding нужен для правильной записи символов
-                    File.WriteAllText(path, scv.ToString(),Encoding.GetEncoding(1251));
+                    File.WriteAllText(path, scv.ToString(),Encoding.GetEncoding("utf-8")); // использовать универсальную код
                 }
         }
 

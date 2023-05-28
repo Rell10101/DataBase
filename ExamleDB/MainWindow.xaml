@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactListDB"
         mc:Ignorable="d"
-       Title="Контакты" Height="382" Width="592">
+       Title="Контакты" Height="409" Width="606">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFD6DAED" Offset="0"/>
-            <GradientStop Color="#FF374698" Offset="1"/>
+            <GradientStop Color="#FF8289AD" Offset="1"/>
             <GradientStop Color="#FF6E78B1" Offset="0.48"/>
         </LinearGradientBrush>
     </Window.Background>
@@ -19,9 +19,9 @@
         <TextBox x:Name="TextBox_name" HorizontalAlignment="Left" Margin="448,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_surname" HorizontalAlignment="Left" Margin="448,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_phone" HorizontalAlignment="Left" Margin="448,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Имя" HorizontalAlignment="Left" Margin="448,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.037"/>
-        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="448,133,0,0" VerticalAlignment="Top"/>
-        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="448,195,0,0" VerticalAlignment="Top"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="448,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.079,-0.037" FontFamily="Calibri"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="448,133,0,0" VerticalAlignment="Top" FontFamily="Calibri"/>
+        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="448,195,0,0" VerticalAlignment="Top" FontFamily="Calibri"/>
         <Label x:Name="label_phone_error" Content="" HorizontalAlignment="Left" Margin="448,232,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.5,0.5" Height="26" FontSize="10">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -43,7 +43,7 @@
         </Menu>
         <Label x:Name="label_name_error" Content="" HorizontalAlignment="Left" Margin="448,107,0,0" VerticalAlignment="Top" Height="26" Width="120" FontSize="10"/>
         <Label x:Name="label_surname_error" HorizontalAlignment="Left" Margin="448,0,0,0" VerticalAlignment="Center" FontSize="10" Height="24" Width="120"/>
-        <Label x:Name="Label_email" Content="Email" HorizontalAlignment="Left" Margin="453,257,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_email" Content="Email" HorizontalAlignment="Left" Margin="453,257,0,0" VerticalAlignment="Top" FontFamily="Calibri"/>
         <TextBox x:Name="TextBox_email" HorizontalAlignment="Left" Margin="448,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.235,0.615"/>
         <Label x:Name="label_email_error" HorizontalAlignment="Left" Margin="448,295,0,0" VerticalAlignment="Top" Width="120" FontSize="10" Height="21"/>
     </Grid>
