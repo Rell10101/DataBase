@@ -6,14 +6,34 @@
         xmlns:local="clr-namespace:ContactListDB"
         mc:Ignorable="d"
        Title="Контакты" Height="409" Width="606">
+    <!--  x:Class="ContactListDB.MainWindow" - имя класса, связанного с файлом xaml, хранящий обработчики событий-->
+    <!-- author Самаев Антон ИВТ-21-->
     <Window.Background>
+        <!-- LinearGradientBrush - градиентная кисть, представляет плавный 
+            переход от одного цвета к другому-->
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <!-- Для указания цвета и точек, от которых начинается переход, 
+                    используется объект GradientStop. Его свойство Color указывает 
+                    на цвет, а свойство Offset - на точку, с которой начинается переход.-->
             <GradientStop Color="#FFD6DAED" Offset="0"/>
             <GradientStop Color="#FF8289AD" Offset="1"/>
             <GradientStop Color="#FF6E78B1" Offset="0.48"/>
         </LinearGradientBrush>
+    <!-- цвет фона окна -->
     </Window.Background>
     <Grid>
+        <!--  -->
+        <!-- 
+        Name - название элемента, которое используется в коде 
+        HorizontalAlignment - горизонтальное выравнивание (Left, Right, Center (положение по центру), Stretch (растяжение по всей ширине))
+        VerticalAlignment - вертикальное выравнивание (Top (положение в верху контейнера), Bottom (положение внизу), Center (положение по центру), Stretch (растяжение по всей высоте))
+        Height - высота
+        Margin - устанавливает отступы вокруг элемента
+        Width - ширина
+        Content - надпись на элементе. "_" перед текстом делает первую букву горячей клавишей
+        Click - обработчик собития
+        TextWrapping позволяет переносить текст при установке этого свойства TextWrapping="Wrap"
+        -->
         <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="320" Margin="10,36,0,0" VerticalAlignment="Top" Width="413" SelectionChanged="datagrid_SelectionChanged"/>
         <Button x:Name="button_add_row" Content="_Добавить строку" HorizontalAlignment="Left" Margin="448,36,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="button_add_row_Click"/>
         <TextBox x:Name="TextBox_name" HorizontalAlignment="Left" Margin="448,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -23,16 +43,42 @@
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="448,133,0,0" VerticalAlignment="Top" FontFamily="Calibri"/>
         <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="448,195,0,0" VerticalAlignment="Top" FontFamily="Calibri"/>
         <Label x:Name="label_phone_error" Content="" HorizontalAlignment="Left" Margin="448,232,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.5,0.5" Height="26" FontSize="10">
-            <Label.RenderTransform>
+             <Label.RenderTransform>
                 <TransformGroup>
+                    <!-- 
+                    ScaleTransform
+                    Обеспечивает масштабирование элемента на определенную величину.
+                    Для изменения ширины надо задать свойство ScaleX, а для изменения длины - свойство ScaleY.
+                    Кроме того, также имеются свойства CenterX и CenterY, позволяющие позиционировать элемент.
+                    -->
                     <ScaleTransform/>
+                    <!-- 
+                    SkewTransform позволяет задать наклон элемента вдоль оси X с помощью свойства AngleX, и по оси Y - с помощью свойства AngleY.
+                    А с помощью свойств CenterX и CenterY можно изменить положение элемента относительно осй X и Y:
+                    -->
                     <SkewTransform/>
-                    <RotateTransform Angle="-0.761"/>
+                    <!-- 
+                     RotateTransform поворачивает элемент вокруг оси на определенное количество градусов. Данный объект принимает три основых параметра:
+                    Angle: угол поворота
+                    CenterX: устанавливает центр вращения по оси X
+                    CenterY: устанавливает центр вращения по оси Y
+                    -->
+                    <RotateTransform Angle="-0.189"/>
+                    <!-- 
+                    TranslateTransform позволяет сместить положение элемента по оси X, с помощью свойства X, и по оси Y - с помощью свойства Y.
+                    -->
                     <TranslateTransform/>
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
         <Button x:Name="Button_del_row" Content="_Удалить строчку" HorizontalAlignment="Left" Margin="448,329,0,0" VerticalAlignment="Top" Height="27" Width="120" Click="Button_del_row_Click"/>
+        <!-- Класс Menu позволяет организовывать элементы, связанные с командами и 
+        обработчиками событий, в иерархическом порядке. Каждый элемент Menu 
+        содержит коллекцию элементов MenuItem.-->
+        <!-- 
+        Header - текст на пункте меню
+        Click - обработчик события нажатия на пункт меню
+        -->
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="App">
                 <MenuItem Header="Reference" Click="MenuItem_Reference_Click"></MenuItem>
@@ -41,6 +87,10 @@
                 <MenuItem Header="Exit"  Click="MenuItem_Exit_Click"></MenuItem>
             </MenuItem>
         </Menu>
+        <!-- 
+        FontSize - размер шрифта
+        FontFamily - тип шрифта
+        -->
         <Label x:Name="label_name_error" Content="" HorizontalAlignment="Left" Margin="448,107,0,0" VerticalAlignment="Top" Height="26" Width="120" FontSize="10"/>
         <Label x:Name="label_surname_error" HorizontalAlignment="Left" Margin="448,0,0,0" VerticalAlignment="Center" FontSize="10" Height="24" Width="120"/>
         <Label x:Name="Label_email" Content="Email" HorizontalAlignment="Left" Margin="453,257,0,0" VerticalAlignment="Top" FontFamily="Calibri"/>
